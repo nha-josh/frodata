@@ -15,7 +15,7 @@ module FrOData
         end
 
         def error_message
-          result_json['error'].andand['message']
+          result_json['error']&.dig('message')
         end
 
         def parsed_body
