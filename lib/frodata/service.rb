@@ -231,7 +231,7 @@ module FrOData
         conn.request :url_encoded
         conn.response :logger, logger
         yield conn if block_given?
-        conn.adapter Faraday.default_adapter unless conn.builder.send(:adapter_set?)
+        conn.adapter Faraday.default_adapter unless conn.builder.adapter
       end
     end
 
